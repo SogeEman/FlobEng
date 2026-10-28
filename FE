@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flobamoratads English | Inspiring & Empowering 1st of 2023</title>
+<style>
+:root {
+  --ink:#172b3a;
+  --muted:#687782;
+  --accent:#b52430;
+  --paper:#faf9f6;
+  --line:#dcdedc;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+button,input { font:inherit; }
+button { cursor:pointer; }
+a { color:inherit; text-decoration:none; }
+.container { max-width:1240px; margin:auto; padding:0 22px; }
+.topbar {
+  background:#172b3a; color:white;
+  padding:9px 0; font-size:12px;
+}
+.topbar .container {
+  display:flex; justify-content:space-between;
+}
+.masthead {
+  text-align:center; padding:30px 10px 24px;
+  border-bottom:1px solid var(--line);
+}
+.masthead h1 {
+  font-family:Georgia,serif;
+  font-size:clamp(48px,8vw,94px);
+  letter-spacing:-5px;
+  margin:0;
+}
+.masthead p {
+  font-size:12px; letter-spacing:3px;
+  text-transform:uppercase;
+}
+nav {
+  border-bottom:2px solid var(--ink);
+  background:var(--paper);
+}
+.navinner {
+  display:flex; align-items:center;
+  gap:23px; overflow-x:auto; padding:16px 0;
+}
+nav button {
+  border:0; background:none;
+  font-size:13px; font-weight:bold;
+  white-space:nowrap; color:var(--ink);
+}
+nav button.active { color:var(--accent); }
+.breaking {
+  background:#f3e9e7; padding:13px 18px;
+  margin:22px 0; font-size:13px;
+}
+.breaking strong {
+  color:var(--accent); margin-right:12px;
+}
+.tools {
+  display:flex; justify-content:space-between;
+  align-items:center; gap:16px; flex-wrap:wrap;
+  margin:28px 0;
+}
+.tools h2 {
+  font-family:Georgia,serif;
+  font-size:29px; margin:0;
+}
+input {
+  border:1px solid var(--line);
+  background:white; border-radius:3px;
+  padding:12px; min-width:220px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:25px;
+}
+.story {
+  border-bottom:1px solid var(--line);
+  padding-bottom:22px;
+  cursor:pointer;
+}
+.story img {
+  display:block; width:100%;
+  aspect-ratio:16/10; object-fit:cover;
+  background:#e5e7e8;
+}
+.story.featured img { aspect-ratio:16/9; }
+.category {
+  color:var(--accent);
+  font-size:11px; font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  margin-top:17px;
+}
+.story h3 {
+  font-family:Georgia,serif;
+  font-size:23px; line-height:1.16;
+  margin:10px 0;
+}
+.story.featured h3 { font-size:39px; }
+.story p {
+  color:#56636c;
+  line-height:1.6; font-size:14px;
+}
+.meta {
+  color:var(--muted);
+  font-size:12px; margin-top:12px;
+}
+.section-title {
+  border-top:3px solid var(--ink);
+  margin-top:45px; padding-top:16px;
+  font-family:Georgia,serif;
+  font-size:28px;
+}
+.more {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px; margin-bottom:45px;
+}
+.newsletter {
+  background:#172b3a;
+  color:white; padding:40px;
+  margin:40px 0;
+}
+.newsletter h2 {
+  font-family:Georgia,serif;
+  font-size:32px;
+}
+.newsletter p { color:#d7e0e5; }
+.newsletter button {
+  background:#d6b475;
+  border:0; padding:13px 22px;
+  font-weight:bold;
+}
+.article-view {
+  max-width:790px; margin:45px auto;
+}
+.article-view h1 {
+  font-family:Georgia,serif;
+  font-size:clamp(35px,6vw,60px);
+  line-height:1.1;
+}
+.article-view .lead {
+  font-size:21px; color:#52616c;
+}
+.article-view img {
+  width:100%; margin:25px 0;
+}
+.article-body {
+  font-family:Georgia,serif;
+  font-size:19px; line-height:1.85;
+}
+.back {
+  border:0; background:none;
+  color:var(--accent);
+  font-weight:bold; padding:0;
+}
+footer {
+  background:#172b3a; color:white;
+  padding:45px 0; margin-top:60px;
+}
+footer p { color:#aab8c0; font-size:13px; }
+.empty { padding:50px 0; color:var(--muted); }
+@media(max-width:850px) {
+  .grid { grid-template-columns:1fr 1fr; }
+  .featured { grid-column:span 2; }
+  .more { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:550px) {
+  .grid,.more { grid-template-columns:1fr; }
+  .featured { grid-column:auto; }
+  .story.featured h3 { font-size:30px; }
+  .masthead h1 { letter-spacing:-2px; }
+  .newsletter { padding:25px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>INDEPENDENT JOURNALISM</span>
+    <span id="today"></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <h1>Flobamoratads English.</h1>
+  <p>Ideas · News · Culture · Perspective</p>
+</header>
+
+<nav>
+  <div class="container navinner" id="navigation"></div>
+</nav>
+
+<main class="container" id="app"></main>
+
+<footer>
+  <div class="container">
+    <h2 style="font-family:Georgia,serif">Flobamoratads English. Inspiring and Empowering 1st of October 2023.</h2>
+    <p>Independent stories. Broader perspectives.</p>
+    <p>© <span id="year"></span> Flobamoratads English. All rights reserved.</p>
+    <p>About · Contact · Privacy · Editorial Policy</p>
+  </div>
+</footer>
+
+<script>
+// DEMONSTRATION ARTICLES
+// Replace with your own published content.
+const articles = [
+ {
+  id:1, category:"World",
+  title:"A changing world: the forces shaping our future",
+  summary:"An exploration of the ideas and global developments influencing tomorrow.",
+  author:"Editorial Desk", date:"October 2026",
+  image:"https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200",
+  body:"Our world is changing in profound ways. Technology, culture, economics and international cooperation are reshaping how societies develop. Understanding these forces requires curiosity, independent thinking and thoughtful journalism."
+ },
+ {
+  id:2, category:"Technology",
+  title:"The next chapter of artificial intelligence",
+  summary:"How emerging technology is changing everyday life and creative work.",
+  author:"Technology Desk", date:"October 2026",
+  image:"https://images.unsplash.com/photo-1518770660439-4636190af475?w=900",
+  body:"Artificial intelligence is creating new opportunities and questions. From education to business, the challenge is to develop tools that serve people responsibly and transparently."
+ },
+ {
+  id:3, category:"Culture",
+  title:"Why independent creative voices matter",
+  summary:"Exploring the changing landscape of art, media and cultural expression.",
+  author:"Culture Desk", date:"October 2026",
+  image:"https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900",
+  body:"Culture grows through different perspectives. Independent creators bring fresh ideas and help communities discover new ways to understand the world."
+ },
+ {
+  id:4, category:"Business",
+  title:"The new generation of global entrepreneurs",
+  summary:"A look at the ideas driving modern business and innovation.",
+  author:"Business Desk", date:"October 2026",
+  image:"https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900",
+  body:"Entrepreneurship continues to evolve as new technologies reduce barriers to entry. Businesses increasingly combine digital tools with local expertise."
+ },
+ {
+  id:5, category:"Opinion",
+  title:"A legitimate Climate Protest",
+  summary:"The climate protests can expand a democratic space beyond state borders. ",
+  author:"Opinion Desk", date:"October 2026",
+  image:"https://flobamoratadsenglishnewspaper.wordpress.com/2022/12/16/the-legitimacy-of-climate-strikes/",
+  body:"to what extent a climate protest/strike is as legitimate as other public protests in society?"
+ },
+ {
+  id:6, category:"Politics",
+  title:"Understanding the institutions that shape society",
+  summary:"An introductory look at civic participation and public decisions.",
+  author:"Politics Desk", date:"October 2026",
+  image:"https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=900",
+  body:"Public institutions influence many aspects of daily life. Clear explanations of policy and democratic processes help readers participate in civic discussions."
+ }
+];
+
+const categories = [
+ "All","World","Politics","Business",
+ "Technology","Culture","Opinion"
+];
+let currentCategory = "All";
+let searchTerm = "";
+
+const app = document.getElementById("app");
+const navigation = document.getElementById("navigation");
+
+document.getElementById("today").textContent =
+ new Date().toLocaleDateString("en-GB",{
+  weekday:"long",day:"numeric",month:"long",year:"numeric"
+ });
+document.getElementById("year").textContent =
+ new Date().getFullYear();
+
+function escapeHTML(s) {
+ return String(s).replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",
+  '"':"&quot;","'":"&#39;"
+ })[c]);
+}
+
+function renderNav() {
+ navigation.innerHTML = categories.map(c=>
+  `<button class="${currentCategory===c?'active':''}"
+    data-category="${c}">${c}</button>`
+ ).join("");
+ navigation.querySelectorAll("button").forEach(b=>{
+  b.onclick=()=>{
+   currentCategory=b.dataset.category;
+   searchTerm="";
+   renderNav();
+   renderHome();
+  };
+ });
+}
+
+function storyCard(a,featured=false) {
+ return `<article class="story ${featured?'featured':''}"
+  data-id="${a.id}" tabindex="0" role="button">
+  <img src="${a.image}" alt="" loading="lazy">
+  <div class="category">${escapeHTML(a.category)}</div>
+  <h3>${escapeHTML(a.title)}</h3>
+  <p>${escapeHTML(a.summary)}</p>
+  <div class="meta">By ${escapeHTML(a.author)} · ${escapeHTML(a.date)}</div>
+ </article>`;
+}
+
+function attachStories() {
+ document.querySelectorAll(".story").forEach(el=>{
+  const open=()=>openArticle(Number(el.dataset.id));
+  el.onclick=open;
+  el.onkeydown=e=>{
+   if(e.key==="Enter"||e.key===" ") {
+    e.preventDefault(); open();
+   }
+  };
+ });
+}
+
+function renderHome() {
+ const filtered=articles.filter(a=>
+  (currentCategory==="All"||a.category===currentCategory) &&
+  (a.title+" "+a.summary+" "+a.category)
+   .toLowerCase().includes(searchTerm.toLowerCase())
+ );
+ app.innerHTML=`
+  <div class="breaking">
+   <strong>THE CURRENT</strong>
+   Independent perspectives on a changing world
+  </div>
+  <div class="tools">
+   <h2>${escapeHTML(currentCategory==="All"?"Today's Stories":currentCategory)}</h2>
+   <input id="search" type="search"
+    placeholder="Search stories..."
+    value="${escapeHTML(searchTerm)}">
+  </div>
+  <div id="results">
+   ${filtered.length?`
+    <div class="grid">
+     ${filtered.slice(0,3).map((a,i)=>storyCard(a,i===0)).join("")}
+    </div>
+    ${filtered.length>3?`
+     <h2 class="section-title">More Stories</h2>
+     <div class="more">
+      ${filtered.slice(3).map(a=>storyCard(a)).join("")}
+     </div>`:""}
+   `:`<p class="empty">No stories found.</p>`}
+  </div>
+  <section class="newsletter">
+   <h2>Stay informed.</h2>
+   <p>Get our latest stories and perspectives in your inbox.</p>
+   <form id="newsletterForm">
+    <input type="email" placeholder="Your email address"
+     aria-label="Email address" required>
+    <button type="submit">Subscribe</button>
+   </form>
+   <p id="newsletterStatus" aria-live="polite"></p>
+  </section>
+ `;
+ document.getElementById("search").oninput=e=>{
+  searchTerm=e.target.value;
+  // Refresh results without replacing the search input.
+  const matches=articles.filter(a=>
+   (currentCategory==="All"||a.category===currentCategory) &&
+   (a.title+" "+a.summary+" "+a.category)
+    .toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  document.getElementById("results").innerHTML=
+   matches.length?
+   `<div class="grid">${matches.slice(0,3).map((a,i)=>
+    storyCard(a,i===0)).join("")}</div>
+    <div class="more">${matches.slice(3).map(a=>storyCard(a)).join("")}</div>`:
+   `<p class="empty">No stories found.</p>`;
+  attachStories();
+ };
+ document.getElementById("newsletterForm").onsubmit=e=>{
+  e.preventDefault();
+  document.getElementById("newsletterStatus").textContent=
+   "Demo only: connect an email service to enable subscriptions.";
+ };
+ attachStories();
+}
+
+function openArticle(id) {
+ const a=articles.find(x=>x.id===id);
+ if(!a)return;
+ app.innerHTML=`
+  <div class="article-view">
+   <button class="back" id="back">← Back to stories</button>
+   <div class="category">${escapeHTML(a.category)}</div>
+   <h1>${escapeHTML(a.title)}</h1>
+   <p class="lead">${escapeHTML(a.summary)}</p>
+   <div class="meta">By ${escapeHTML(a.author)} · ${escapeHTML(a.date)}</div>
+   <img src="${a.image}" alt="">
+   <div class="article-body">
+    ${a.body.split("\n").filter(Boolean).map(p=>
+     `<p>${escapeHTML(p)}</p>`).join("")}
+   </div>
+  </div>`;
+ document.getElementById("back").onclick=renderHome;
+ window.scrollTo(0,0);
+}
+
+renderNav();
+renderHome();
+</script>
+</body>
+</html>
